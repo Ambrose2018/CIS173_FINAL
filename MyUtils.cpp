@@ -10,7 +10,6 @@
 #include <sstream>
 #include "MyUtils.h"
 #include "CipherMenus.h"
-#include "CipherBase.h"
 #include "CaesarCipher.h"
 #include "Rot13Cipher.h"
 #include "Rot47Cipher.h"
@@ -237,45 +236,45 @@ void pressEnterToContinue(const string &promptString) {
 void ansiBoxText(const string &promptString, const string &boxedText, int boxType) {
 
 // =============================================================== START OF BOXDRAW CHARACTER DEFINITIONS ==============================
-		
+
 	// light density block
-	const string lineBlock1  = "░"  ; // * Extended ASCII character * 
+    const string lineBlock1 = "░"; // * Extended ASCII character *
 
 	// medium density block
-	const string lineBlock2  = "▒"  ; // * Extended ASCII character * 
+    const string lineBlock2 = "▒"; // * Extended ASCII character *
 
 	// high density block
-	const string lineBlock3  = "▓"  ; // * Extended ASCII character * 
+    const string lineBlock3 = "▓"; // * Extended ASCII character *
 
 	// single line boxdraw characters
-	const string line11NW  = "┌"  ; // * Extended ASCII character * 
-	const string line11NE  = "┐"  ; // * Extended ASCII character * 
-	const string line11SW  = "└"  ; // * Extended ASCII character * 
-	const string line11SE  = "┘"  ; // * Extended ASCII character * 
-	const string line11NL  = "─"  ; // * Extended ASCII character * 
-	const string line11SL  = "─"  ; // * Extended ASCII character * 
-	const string line11EL  = "│"  ; // * Extended ASCII character * 
-	const string line11WL  = "│"  ; // * Extended ASCII character * 
-	const string line11NT  = "┬"  ; // * Extended ASCII character * 
-	const string line11ST  = "┴"  ; // * Extended ASCII character * 
-	const string line11ET  = "┤"  ; // * Extended ASCII character * 
-	const string line11WT  = "├"  ; // * Extended ASCII character * 
-	const string line11XP  = "┼"  ; // * Extended ASCII character * 
-	
+    const string line11NW = "┌"; // * Extended ASCII character *
+    const string line11NE = "┐"; // * Extended ASCII character *
+    const string line11SW = "└"; // * Extended ASCII character *
+    const string line11SE = "┘"; // * Extended ASCII character *
+    const string line11NL = "─"; // * Extended ASCII character *
+    const string line11SL = "─"; // * Extended ASCII character *
+    const string line11EL = "│"; // * Extended ASCII character *
+    const string line11WL = "│"; // * Extended ASCII character *
+    const string line11NT = "┬"; // * Extended ASCII character *
+    const string line11ST = "┴"; // * Extended ASCII character *
+    const string line11ET = "┤"; // * Extended ASCII character *
+    const string line11WT = "├"; // * Extended ASCII character *
+    const string line11XP = "┼"; // * Extended ASCII character *
+
 	// double line boxdraw characters
-	const string line22NW  = "╔"  ; // * Extended ASCII character * 
-	const string line22NE  = "╗"  ; // * Extended ASCII character * 
-	const string line22SW  = "╚"  ; // * Extended ASCII character * 
-	const string line22SE  = "╝"  ; // * Extended ASCII character * 
-	const string line22NL  = "═"  ; // * Extended ASCII character * 
-	const string line22SL  = "═"  ; // * Extended ASCII character * 
-	const string line22EL  = "║"  ; // * Extended ASCII character * 
-	const string line22WL  = "║"  ; // * Extended ASCII character * 
-	const string line22NT  = "╦"  ; // * Extended ASCII character * 
-	const string line22ST  = "╩"  ; // * Extended ASCII character * 
-	const string line22ET  = "╣"  ; // * Extended ASCII character * 
-	const string line22WT  = "╠"  ; // * Extended ASCII character * 
-	const string line22XP  = "╬"  ; // * Extended ASCII character * 
+    const string line22NW = "╔"; // * Extended ASCII character *
+    const string line22NE = "╗"; // * Extended ASCII character *
+    const string line22SW = "╚"; // * Extended ASCII character *
+    const string line22SE = "╝"; // * Extended ASCII character *
+    const string line22NL = "═"; // * Extended ASCII character *
+    const string line22SL = "═"; // * Extended ASCII character *
+    const string line22EL = "║"; // * Extended ASCII character *
+    const string line22WL = "║"; // * Extended ASCII character *
+    const string line22NT = "╦"; // * Extended ASCII character *
+    const string line22ST = "╩"; // * Extended ASCII character *
+    const string line22ET = "╣"; // * Extended ASCII character *
+    const string line22WT = "╠"; // * Extended ASCII character *
+    const string line22XP = "╬"; // * Extended ASCII character *
 
 // ================================================================= END OF BOXDRAW CHARACTER DEFINITIONS ==============================
 
@@ -289,13 +288,13 @@ void ansiBoxText(const string &promptString, const string &boxedText, int boxTyp
 
 		for (int i = 0; i < prefixSize; ++i) {
 			prefixString.at(i) = ' ';
-		}	
+        }
 
 		// top row output
 		cout << promptString << " " << line11NW << line11NL;
 		for (int i = 0; i < keystrSize; ++i) {
 			cout << line11NL;
-		}	
+        }
 		cout << line11NL << line11NE << endl;
 
 		// middle row output
@@ -307,22 +306,22 @@ void ansiBoxText(const string &promptString, const string &boxedText, int boxTyp
 		cout << prefixString << " " << line11SW << line11SL;
 		for (int i = 0; i < keystrSize; ++i) {
 			cout << line11SL;
-		}	
-		cout << line11SL << line11SE << endl; 
-		
+        }
+        cout << line11SL << line11SE << endl;
+
 	}
 
 	if (boxType == 2) {
 
 		for (int i = 0; i < prefixSize; ++i) {
 			prefixString.at(i) = ' ';
-		}	
+        }
 
 		// top row output
 		cout << promptString << " " << line22NW << line22NL;
 		for (int i = 0; i < keystrSize; ++i) {
 			cout << line22NL;
-		}	
+        }
 		cout << line22NL << line22NE << endl;
 
 		// middle row output
@@ -334,9 +333,9 @@ void ansiBoxText(const string &promptString, const string &boxedText, int boxTyp
 		cout << prefixString << " " << line22SW << line22SL;
 		for (int i = 0; i < keystrSize; ++i) {
 			cout << line22SL;
-		}	
-		cout << line22SL << line22SE << endl; 
-		
+        }
+        cout << line22SL << line22SE << endl;
+
 	}
 
 }  	// END METHOD void ansiBoxText(const string &promptString, const string &boxedText, int boxType) {

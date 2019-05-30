@@ -13,9 +13,7 @@ add_executable(CIS173_Cipher_Group_Project_v2
         main.cpp
         MyUtils.cpp
         MyUtils.h
-        CipherBase.h
         Rot13Cipher.h
         Rot47Cipher.h
-        CipherBase.cpp
         Rot13Cipher.cpp
         Rot47Cipher.cpp)
