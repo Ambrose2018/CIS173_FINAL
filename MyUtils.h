@@ -19,6 +19,7 @@
 using namespace std;
 
 void clearScreen();          // no parameters
+
 string trim(const string &str);
 
 int inputInteger(const string &promptString);

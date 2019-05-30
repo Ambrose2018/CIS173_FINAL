@@ -9,10 +9,6 @@
 #include <iostream>
 #include <sstream>
 #include "MyUtils.h"
-#include "CipherMenus.h"
-#include "CaesarCipher.h"
-#include "Rot13Cipher.h"
-#include "Rot47Cipher.h"
 
 using namespace std;
 

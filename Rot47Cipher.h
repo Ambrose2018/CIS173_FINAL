@@ -18,9 +18,7 @@ class Rot47Cipher {
 
 private:
 
-    string inEncrypt;
     string outEncrypt;
-    string cipherAlphabet;
     string key1, key2;
 
     int FindIndex(char currChar);
@@ -29,7 +27,7 @@ public:
 
     Rot47Cipher(); // default constructor
 
-    string Encrypt(string inputMsg, int shift = 47); // core routine for the project
+    string Encrypt(string inputMsg); // core routine for the project
 
 };
 

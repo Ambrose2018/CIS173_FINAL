@@ -2,12 +2,8 @@
 
 #include <string>
 #include <iostream>
-#include <sstream>
 #include "MyUtils.h"
-#include "CipherMenus.h"
-#include "CaesarCipher.h"
-#include "Rot13Cipher.h"
-#include "Rot47Cipher.h"
+
 
 using namespace std;
 
@@ -16,6 +12,12 @@ void displaySplashScreen(void);  		// Look how pretty it is!
 void displaySubmenu1(void);  				// Caesar Cipher routines
 void displaySubmenu2(int _r13V);  				// ROT-13 Cipher routines
 void displaySubmenu3(void);  				// ROT-47 Cipher routines
+
+// ==========================================================================================================
+
+// Default Constructor
+CipherMenus::CipherMenus() {
+}
 
 // ==========================================================================================================
 
@@ -170,7 +172,7 @@ int displayMenuA(void) {
     choice = inputIntegerChoice("? ", 0, 5);
 
     return choice;
-};
+}
 
 // ==========================================================================================================
 
@@ -244,14 +246,14 @@ void displaySubmenu2(int _r13V) {
         // newShift is locked at +13 for ROT-13
         // newShift = inputInteger("Enter a shift number: ");
 
-        encrypted = cc.Encrypt(userInput, newShift);
+        encrypted = cc.Encrypt(userInput);
 
         cout << "\nMessage encrypted with a shift of +" << newShift << " : " <<  endl;
 				ansiBoxText(" ", encrypted, 1);
 
         // newShift is locked at +13 for ROT-13
         // newShift *= -1;
-        decrypted = cc.Encrypt(encrypted, newShift);
+        decrypted = cc.Encrypt(encrypted);
 
         cout << "\nMessage decrypted with a shift of +" << newShift << " : " <<  endl;
 				ansiBoxText(" ", decrypted, 1);
@@ -286,14 +288,14 @@ void displaySubmenu3(void) {
         // newShift is locked at +13 for ROT-13
         // newShift = inputInteger("Enter a shift number: ");
 
-        encrypted = cc.Encrypt(userInput, newShift);
+        encrypted = cc.Encrypt(userInput);
 
         cout << "\nMessage encrypted with a shift of +" << newShift << " : " <<  endl;
 				ansiBoxText(" ", encrypted, 1);
 
         // newShift is locked at +47 for ROT-47
         // newShift *= -1;
-        decrypted = cc.Encrypt(encrypted, newShift);
+        decrypted = cc.Encrypt(encrypted);
 
         cout << "\nMessage decrypted with a shift of +" << newShift << " : " <<  endl;
 				ansiBoxText(" ", decrypted, 1);

@@ -1,20 +1,14 @@
 // Created May 2019 by the software gurus of Erica Cruz and Matt Ambrose.
 
 #include <string>
-#include <iostream>
-#include <sstream>
 #include "MyUtils.h"
-#include "CipherMenus.h"
-#include "CaesarCipher.h"
-#include "Rot13Cipher.h"
-#include "Rot47Cipher.h"
 
 using namespace std;
 
 // Default constructor
 CaesarCipher::CaesarCipher() {
     cipherAlphabet = "abcdefghijklmnopqrstuvwxyz";
-};
+}
 
 int CaesarCipher::FindIndex(char currChar) {
 
@@ -28,7 +22,7 @@ int CaesarCipher::FindIndex(char currChar) {
 
     return index;
 
-};
+}
 
 //limit shift input range OR use modulo
 string CaesarCipher::Encrypt(string inputMsg, int shift) {
@@ -102,6 +96,6 @@ string CaesarCipher::Encrypt(string inputMsg, int shift) {
     }
     //After iterating through whole string, return encrypted version
     return outEncrypt;
-};
+}
 
 // ############### NOTHING BELOW THIS LINE UNLESS REPLIT SCREWS UP ##############################################################################################

@@ -2,12 +2,7 @@
 
 #include <string>
 #include <iostream>
-#include <sstream>
 #include "MyUtils.h"
-#include "CipherMenus.h"
-#include "CaesarCipher.h"
-#include "Rot13Cipher.h"
-#include "Rot47Cipher.h"
 
 using namespace std;
 
@@ -32,7 +27,7 @@ Rot13Cipher::Rot13Cipher(int _ver) {
 		ansiBoxText("Key #2:", key2, 2);
     cout << endl;
 
-};
+}
 
 int Rot13Cipher::FindIndex(char currChar) {
 
@@ -54,9 +49,9 @@ int Rot13Cipher::FindIndex(char currChar) {
     }
 
     return index;
-};
+}
 
-string Rot13Cipher::Encrypt(string inputMsg, int shift) {
+string Rot13Cipher::Encrypt(string inputMsg) {
 
     outEncrypt = "";
     int currPos = 0;
@@ -80,6 +75,6 @@ string Rot13Cipher::Encrypt(string inputMsg, int shift) {
 
     //After iterating through whole string, return encrypted version
     return outEncrypt;
-};
+}
 
 // ############### NOTHING BELOW THIS LINE UNLESS REPLIT SCREWS UP ##############################################################################################
